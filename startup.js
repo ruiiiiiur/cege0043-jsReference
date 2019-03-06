@@ -1,10 +1,10 @@
 function trackAndCircle(){
+loadW3HTML();
 getPort();
 addPointLinePoly();
 trackLocation();   
-getEarthquakes();
+//getEarthquakes();
 callDivChange();
-loadW3HTML();
 }
 
 
