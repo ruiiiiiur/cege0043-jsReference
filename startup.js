@@ -3,7 +3,8 @@ getPort();
 addPointLinePoly();
 trackLocation();   
 getEarthquakes();
-
+callDivChange();
+loadW3HTML();
 }
 
 
@@ -13,3 +14,6 @@ trackAndCircle ();
 }, false);
 }
 
+function loadW3HTML() {
+w3.includeHTML();
+}
