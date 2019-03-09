@@ -5,7 +5,7 @@ addPointLinePoly();
 trackLocation();   
 //getEarthquakes();
 getforms();
-callDivChange();
+//callDivChange();
 }
 
 
