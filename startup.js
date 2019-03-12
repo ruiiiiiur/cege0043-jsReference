@@ -9,9 +9,15 @@ trackLocation();
 }
 
 
+
+function quizStartup(){
+
+	
+}
+
 function startup() {
 document.addEventListener('DOMContentLoaded', function() {
-trackAndCircle ();
+quizStartup ();
 }, false);
 }
 
