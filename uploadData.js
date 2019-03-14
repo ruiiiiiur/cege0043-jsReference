@@ -9,11 +9,9 @@ var answer_4 = document.getElementById("answer_4").value;
 var postString = "question_title="+question_title +"&question_text="+question_text+"&answer_1="+answer_1+"&answer_2="+answer_2+"&answer_3="+answer_3+"&answer_4="+answer_4;
 
 // now get the geometry values
-//var latitude = document.getElementById("latitude").value;
-//var longitude = document.getElementById("longitude").value;
-//postString = postString + "&latitude=" + latitude + "&longitude=" + longitude;
-
-
+var latitude = document.getElementById("latitude").value;
+var longitude = document.getElementById("longitude").value;
+postString = postString + "&latitude=" + latitude + "&longitude=" + longitude;
 
 
 // now get the checkbox values - separate them with a | so that they can be
