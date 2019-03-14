@@ -1,23 +1,16 @@
-function trackAndCircle(){
+
+function questionStartup(){
 loadW3HTML();
 getPort();
 addPointLinePoly();
-trackLocation();   
-//getEarthquakes();
-//getforms();
-//callDivChange();
-}
-
-
-
-function questionStartup(){
-
-	
+trackLocation();  
+addPoint();
+addBuffer();
 }
 
 function startup() {
 document.addEventListener('DOMContentLoaded', function() {
-quizStartup ();
+questionStartup ();
 }, false);
 }
 
