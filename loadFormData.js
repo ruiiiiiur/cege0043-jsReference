@@ -76,7 +76,7 @@ function loadFormData(formData) {
                 htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_1' / > " + feature.properties.answer_1 + "<br>";
                 htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_2' / > " + feature.properties.answer_2 + "<br>";
                 htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_3' / > " + feature.properties.answer_3 + "<br>";
-                htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_3' / > " + feature.properties.answer_4 + "<br>";
+                htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_4' / > " + feature.properties.answer_4 + "<br>";
                 //htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_4' / > " + feature.properties.port_id + " < br > ";
                 htmlString = htmlString + "<button onclick='checkAnswer(" + feature.properties.id + ");return false;'>Submit Answer</button>";
                 // now include a hidden element with the answer
@@ -85,7 +85,7 @@ function loadFormData(formData) {
                 
 
                 htmlString = htmlString + "<div id=answer" + feature.properties.id + " hidden> " + feature.properties.correct_answer + " </div>";
-
+                //htmlString = htmlString + "<div id=answer" + feature.properties.id + " hidden>1</div>";
                 //var correctanswerla = feature.properties.correct_answer;
                 //document.getElementById("answer" + feature.properties.id + "").innerHTML = correctanswerla;
                 //htmlString = htmlString + "</div>";
