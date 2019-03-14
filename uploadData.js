@@ -34,7 +34,6 @@ postString = postString + "&latitude=" + latitude + "&longitude=" + longitude;
 // now get the select box values
 var correct_answer = document.getElementById("answerselectbox").value;
 postString = postString + "&correct_answer="+correct_answer;
-
 alert (postString);
 processData(postString);
 }
@@ -47,7 +46,7 @@ var client; // the global variable that holds the request
 function processData(postString) {
 client = new XMLHttpRequest();
 postString = postString + "&port_id=" + httpPortNumber;
-var url = 'http://developer.cege.ucl.ac.uk:'+ httpPortNumber + "/uploadData";
+var url = 'http://developer.cege.ucl.ac.uk:'+ httpPortNumber + "/uploadQuestion";
 client.open('POST',url,true);
 client.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 client.onreadystatechange = dataUploaded;
