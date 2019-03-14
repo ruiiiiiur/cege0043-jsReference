@@ -83,8 +83,8 @@ function loadFormData(formData) {
                 // in this case the answer is always the first choice
                 // for the assignment this will of course vary - you can use feature.properties.correct_answer
                 
-                //htmlString = htmlString + "<div id=answer" + feature.properties.id + " hidden> " + feature.properties.correct_answer + "</div>";
-                htmlString = htmlString + "<div id=answer" + feature.properties.id + " > <h2>" + feature.properties.correct_answer + "</h2><br>; </div>";
+
+                htmlString = htmlString + "<div id=answer" + feature.properties.id + " hidden> " + feature.properties.correct_answer + " </div>";
 
                 //var correctanswerla = feature.properties.correct_answer;
                 //document.getElementById("answer" + feature.properties.id + "").innerHTML = correctanswerla;
