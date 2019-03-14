@@ -1,6 +1,11 @@
 var client;
 var earthquakes;
 
+function goBacktoUCL(){
+mymap.map('mapid').setView([51.524257,-0.134503], 16);
+}
+
+
 function addPointLinePoly() { 
 // add a point
 L.marker([51.5, -0.09]).addTo(mymap)
