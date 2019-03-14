@@ -32,27 +32,26 @@ var geojsonFeature = {
 	};
 
 
-var testMarkerBlue = L.AwesomeMarkers.icon({
-icon: 'play',
-markerColor: 'blue'
-});
+//var testMarkerBlue = L.AwesomeMarkers.icon({
+//icon: 'play',
+//markerColor: 'blue'
+//});
 
 function addPoint(){
 //  add it to the map
 L.geoJSON(geojsonFeature, {
 pointToLayer: function (feature, latlng) {
-return L.marker(latlng, {icon:testMarkerBlue});
+return L.marker(latlng);
 }
-}).addTo(mymap).bindPopup("<b>" + "You are at " +  geojsonFeature.properties.popupContent + "<b>");}
-
+}).addTo(mymap).bindPopup("<b>" + "You are at " +  geojsonFeature.properties.popupContent + "<b>" + "You are sugguested to create questions within this area.").openPopup();}
 
 //Function 3. Add the buffer of the point
 
 
 // add a circle around UCL main gate
 function addBuffer(){
-L.circle([51.524257, -0.134503], 0.2, {
-	color: 'blue',
+L.circle([51.524257, -0.134503], 200, {
+	color: 'red',
 	fillColor: '#f03',
 	fillOpacity: 0.5
-	}).addTo(mymap).bindPopup("You are sugguested to create questions within this area.");}
+	}).addTo(mymap);}

@@ -2,7 +2,6 @@
 function questionStartup(){
 loadW3HTML();
 getPort();
-addPointLinePoly();
 trackLocation();  
 addPoint();
 addBuffer();
