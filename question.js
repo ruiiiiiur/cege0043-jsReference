@@ -9,6 +9,9 @@ function onMapClick(e) {
 	.setLatLng(e.latlng)
 	.setContent("You just clicked the map at " + e.latlng.toString())
 	.openOn(mymap);
+	//var lat_lng = e.latlng.toString();
+	document.getElementsByName("lat")[0].value = e.latlng.lat;
+	document.getElementsByName("lon")[0].value = e.latlng.lng;	
 	}
 
 // now add the click event detector to the map
