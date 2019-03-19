@@ -3,9 +3,9 @@ function quizStartup(){
 loadW3HTML();
 getPort();
 trackLocation();  
-addPoint();
+//addPoint();
 addBuffer();
-startFormDataLoad();
+
 }
 
 function quizstartup() {
