@@ -11,6 +11,18 @@ var postString = "question_title="+question_title +"&question_text="+question_te
 // now get the geometry values
 var latitude = document.getElementById("latitude").value;
 var longitude = document.getElementById("longitude").value;
+
+
+if (question_title == "" ) {
+alert( "Please enter your question title." ); return false;}   
+
+if (question_text == "" ) {
+alert( "Please enter your question text." ); return false;}   
+
+if (answer_1 == "" / answer_2 == "" /answer_3 == "" /answer_4 == "" )
+	{alert( "Please enter your answers." ); return false;}
+
+
 postString = postString + "&latitude=" + latitude + "&longitude=" + longitude;
 
 
