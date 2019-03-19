@@ -1,21 +1,14 @@
-function trackAndCircle(){
-loadW3HTML();
-getPort();
-addPointLinePoly();
-trackLocation();   
-//getEarthquakes();
-//getforms();
-//callDivChange();
-}
-
-
 
 function quizStartup(){
-
-	
+loadW3HTML();
+getPort();
+trackLocation();  
+addPoint();
+addBuffer();
+startFormDataLoad();
 }
 
-function startup() {
+function quizstartup() {
 document.addEventListener('DOMContentLoaded', function() {
 quizStartup ();
 }, false);

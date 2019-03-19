@@ -7,7 +7,7 @@ addPoint();
 addBuffer();
 }
 
-function startup() {
+function questionstartup() {
 document.addEventListener('DOMContentLoaded', function() {
 questionStartup ();
 }, false);
