@@ -21,10 +21,6 @@ mymap.on('click', onMapClick);
 
 // Function 2. Add the location of the UCL main gate
 
-var testMarkerPink = L.AwesomeMarkers.icon({
-icon: 'play',
-markerColor: 'pink'
-});
 
 // create a geoJSON feature -
 var geojsonFeature = {
@@ -44,6 +40,12 @@ var geojsonFeature = {
 //icon: 'play',
 //markerColor: 'blue'
 //});
+var testMarkerPink = L.AwesomeMarkers.icon({
+icon: 'play',
+markerColor: 'pink'
+});
+
+
 
 function addPoint(){
 //  add it to the map

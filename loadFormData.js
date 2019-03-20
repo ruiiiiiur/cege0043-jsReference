@@ -83,11 +83,13 @@ function checkAnswer(questionID) {
         if ((document.getElementById(questionID + "_" + i).checked) && (i == answer)) {
             alert("Well done");
             correctAnswer = true;
+       //     return L.marker(latlng，{icon:testMarkerPink}).bindPopup(htmlString);
         }
     }
     if (correctAnswer === false) {
         // they didn't get it right
         alert("Better luck next time");
+        //return L.marker(latlng，{icon:testMarkerPink}).bindPopup(htmlString);
     }
     // now close the popup
     mymap.closePopup();
