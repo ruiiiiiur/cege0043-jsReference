@@ -45,6 +45,10 @@ icon: 'play',
 markerColor: 'pink'
 });
 
+var testMarkerRed = L.AwesomeMarkers.icon({
+icon: 'play',
+markerColor: 'red'
+});
 
 
 function addPoint(){

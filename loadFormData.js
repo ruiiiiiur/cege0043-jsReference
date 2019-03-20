@@ -43,7 +43,7 @@ function loadFormData(formData) {
                 htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_3' / > " + feature.properties.answer_3 + "<br>";
                 htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_4' / > " + feature.properties.answer_4 + "<br>";
                 //htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_4' / > " + feature.properties.port_id + " < br > ";
-                htmlString = htmlString + "<button onclick='checkAnswer(" + feature.properties.id + ", " + feature.geometry.coordinates + ");return false;'>Submit Answer</button>";
+                htmlString = htmlString + "<button onclick='checkAnswer(" + feature.properties.id + ", [" + feature.geometry.coordinates + "]);return false;'>Submit Answer</button>";
                 //alert(feature.geometry.coordinates);
                 // now include a hidden element with the answer
                 // in this case the answer is always the first choice
@@ -86,7 +86,7 @@ function checkAnswer(questionID, coor) {
             
             L.geoJSON(geojsonFeature, {
             pointToLayer: function (feature, latlng) {
-            return L.marker(coor, {icon:testMarkerPink});
+            return L.marker([coor[1],coor[0]], {icon:testMarkerPink});
             }
             }).addTo(mymap);
         }
@@ -95,6 +95,11 @@ function checkAnswer(questionID, coor) {
         // they didn't get it right
         alert("Better luck next time");
         //return L.marker(latlng, {icon:testMarkerPink}).bindPopup(htmlString);
+        L.geoJSON(geojsonFeature, {
+        pointToLayer: function (feature, latlng) {
+        return L.marker([coor[1],coor[0]], {icon:testMarkerRed});
+        }
+        }).addTo(mymap);
     }
     // now close the popup
     mymap.closePopup();
