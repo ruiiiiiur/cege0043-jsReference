@@ -43,12 +43,11 @@ function loadFormData(formData) {
                 htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_3' / > " + feature.properties.answer_3 + "<br>";
                 htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_4' / > " + feature.properties.answer_4 + "<br>";
                 //htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_4' / > " + feature.properties.port_id + " < br > ";
-                htmlString = htmlString + "<button onclick='checkAnswer(" + feature.properties.id + ");return false;'>Submit Answer</button>";
+                htmlString = htmlString + "<button onclick='checkAnswer(" + feature.properties.id + ", " + feature.geometry.coordinates + ");return false;'>Submit Answer</button>";
+                //alert(feature.geometry.coordinates);
                 // now include a hidden element with the answer
                 // in this case the answer is always the first choice
                 // for the assignment this will of course vary - you can use feature.properties.correct_answer
-                
-
                 htmlString = htmlString + "<div id=answer" + feature.properties.id + " hidden> " + feature.properties.correct_answer + " </div>";
                 //htmlString = htmlString + "<div id=answer" + feature.properties.id + " hidden>1</div>";
                 //var correctanswerla = feature.properties.correct_answer;
@@ -69,13 +68,14 @@ function removeFormLayer() {
     }
 
 // Add a method to process the button click in this pop-up.
-function checkAnswer(questionID) {
+function checkAnswer(questionID, coor) {
     // get the answer from the hidden div
     // NB - do this BEFORE you close the pop-up as when you close the pop-up the DIV is destroyed
     var answer = document.getElementById("answer" + questionID).innerHTML;
     // now check the question radio buttons
     var correctAnswer = false;
     var answerSelected = 0;
+    alert(coor);
     for (var i = 1; i < 5; i++) {
         if (document.getElementById(questionID + "_" + i).checked) {
             answerSelected = i;
@@ -83,13 +83,18 @@ function checkAnswer(questionID) {
         if ((document.getElementById(questionID + "_" + i).checked) && (i == answer)) {
             alert("Well done");
             correctAnswer = true;
-       //     return L.marker(latlng，{icon:testMarkerPink}).bindPopup(htmlString);
+            
+            L.geoJSON(geojsonFeature, {
+            pointToLayer: function (feature, latlng) {
+            return L.marker(coor, {icon:testMarkerPink});
+            }
+            }).addTo(mymap);
         }
     }
     if (correctAnswer === false) {
         // they didn't get it right
         alert("Better luck next time");
-        //return L.marker(latlng，{icon:testMarkerPink}).bindPopup(htmlString);
+        //return L.marker(latlng, {icon:testMarkerPink}).bindPopup(htmlString);
     }
     // now close the popup
     mymap.closePopup();
