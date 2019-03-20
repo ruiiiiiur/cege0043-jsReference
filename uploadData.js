@@ -19,8 +19,17 @@ alert( "Please enter your question title." ); return false;}
 if (question_text == "" ) {
 alert( "Please enter your question text." ); return false;}   
 
-if (answer_1 == "" / answer_2 == "" /answer_3 == "" /answer_4 == "" )
-	{alert( "Please enter your answers." ); return false;}
+if (answer_1 == "" ) {
+alert( "Please enter answer 1." ); return false;}   
+
+if (answer_2 == "" ) {
+alert( "Please enter answer 2." ); return false;}   
+
+if (answer_3 == "" ) {
+alert( "Please enter answer 3." ); return false;}   
+
+if (answer_4 == "" ) {
+alert( "Please enter answer 4." ); return false;}   
 
 
 postString = postString + "&latitude=" + latitude + "&longitude=" + longitude;
