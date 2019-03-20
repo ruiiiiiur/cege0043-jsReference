@@ -108,8 +108,8 @@ function closestFormPoint() {
     var closestFormPoint = 0;
     // for this example, use the latitude/longitude of warren street
     // in your assignment replace this with the user's location
-    var userlat = 51.524048;
-    var userlng = -0.139924;
+    var userlat = position.coords.latitude;
+    var userlng = position.coords.longitude;
     formLayer.eachLayer(function (layer) {
         var distance = calculateDistance(userlat,
             userlng, layer.getLatLng().lat, layer.getLatLng().lng, 'K');
