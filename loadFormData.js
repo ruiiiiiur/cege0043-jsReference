@@ -107,6 +107,7 @@ function checkAnswer(questionID, coor) {
     // call an AJAX routine using the data
     // the answerSelected variable holds the number of the answer
     // that the user picked
+    startAnswerUpload();
 }
 
 
