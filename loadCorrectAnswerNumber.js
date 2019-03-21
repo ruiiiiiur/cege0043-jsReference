@@ -32,8 +32,8 @@ function formDataResponse2() {
 function loadFormData2(formData2) {
     // convert the text received from the server to JSON
     var formJSON2 = JSON.parse(formData2);
-    console.log(formJSON2[0].array_to_json[0].num_questions);
-    alert(formJSON2[0].array_to_json[0].num_questions);
+    //console.log(formJSON2[0].array_to_json[0].num_questions);
+    alert("You have already correctly answered " + formJSON2[0].array_to_json[0].num_questions + " question(s).");
 }
 
 
