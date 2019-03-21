@@ -1,4 +1,4 @@
-function startAnswerUpload() {
+function startAnswerUpload(id, ca, as) {
 alert ("start data upload");
 //var question_id = feature.properties.id;
 var question_id = questionID;
