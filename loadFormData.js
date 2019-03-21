@@ -75,7 +75,7 @@ function checkAnswer(questionID, coor) {
     // now check the question radio buttons
     var correctAnswer = false;
     var answerSelected = 0;
-    alert(coor);
+    //alert(coor);
     for (var i = 1; i < 5; i++) {
         if (document.getElementById(questionID + "_" + i).checked) {
             answerSelected = i;

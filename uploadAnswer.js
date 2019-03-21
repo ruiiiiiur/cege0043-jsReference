@@ -1,10 +1,13 @@
 function startAnswerUpload() {
 alert ("start data upload");
-var question_id = feature.properties.id;
+//var question_id = feature.properties.id;
+var question_id = questionID;
 alert(question_id);
-var correct_answer = document.getElementById("answer" + feature.properties.id + "").value;
+//var correct_answer = document.getElementById("answer" + feature.properties.id + "").value;
+var correct_answer = answer;
 alert(correct_answer);
-var answer_selected =  document.getElementById("answer" + " + feature.properties.id + ").innerHTML;
+//var answer_selected =  document.getElementById("answer" + " + feature.properties.id + ").innerHTML;
+var answer_selected = answerSelected;
 alert(answer_selected);
 var postString = "question_id=" + question_id + "&correct_answer=" + correct_answer + "&answer_selected=" + answer_selected;
 // now get the select box values
