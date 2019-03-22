@@ -40,9 +40,9 @@ var geojsonFeature = {
 //icon: 'play',
 //markerColor: 'blue'
 //});
-var testMarkerPink = L.AwesomeMarkers.icon({
+var testMarkerGreen = L.AwesomeMarkers.icon({
 icon: 'play',
-markerColor: 'pink'
+markerColor: 'green'
 });
 
 var testMarkerRed = L.AwesomeMarkers.icon({
@@ -55,7 +55,7 @@ function addPoint(){
 //  add it to the map
 L.geoJSON(geojsonFeature, {
 pointToLayer: function (feature, latlng) {
-return L.marker(latlng,{icon:testMarkerPink});
+return L.marker(latlng,{icon:testMarkerGreen});
 }
 }).addTo(mymap).bindPopup("<b>" + "You are at " +  geojsonFeature.properties.popupContent + "<b>" + "You are sugguested to create questions within this area.").openPopup();}
 

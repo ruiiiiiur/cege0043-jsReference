@@ -86,7 +86,7 @@ function checkAnswer(questionID, coor) {
             
             L.geoJSON(geojsonFeature, {
             pointToLayer: function (feature, latlng) {
-            return L.marker([coor[1],coor[0]], {icon:testMarkerPink});
+            return L.marker([coor[1],coor[0]], {icon:testMarkerGreen});
             }
             }).addTo(mymap);
         }
@@ -94,7 +94,6 @@ function checkAnswer(questionID, coor) {
     if (correctAnswer === false) {
         // they didn't get it right
         alert("Better luck next time");
-        //return L.marker(latlng, {icon:testMarkerPink}).bindPopup(htmlString);
         L.geoJSON(geojsonFeature, {
         pointToLayer: function (feature, latlng) {
         return L.marker([coor[1],coor[0]], {icon:testMarkerRed});
