@@ -18,12 +18,15 @@ function load_london_highway(){
 	getGeoJSONs(london_highway);
 }
 
+function load_all_qs(){
+	getGeoJSONs();
+};
 
 
-
-function getGeoJSONs(x){
+function getGeoJSONs(){
 	client = new XMLHttpRequest();
-	client.open('GET' , 'http://developer.cege.ucl.ac.uk:' + httpPortNumber + '/getGeoJSON/' + x + '/geom');
+//	client.open('GET' , 'http://developer.cege.ucl.ac.uk:' + httpPortNumber + '/getGeoJSON/' + x + '/geom');
+    client.open('GET' , 'http://developer.cege.ucl.ac.uk:' + httpPortNumber + '/getAllQuestions');  
 	client.onreadystatechange = GeoJSONResponse; // note don't use GeoJSONResponse() with brackets as that doesn't work
 	client.send();
 	}
@@ -53,3 +56,7 @@ function loadGeoJSONlayer(GeoJSONdata) {
 	}
 
 
+function removeGeoJSONLayer() {
+    mymap.removeLayer(GeoJSONlayer);
+    mymap.setView([51.524257,-0.134503], 13);
+    }
