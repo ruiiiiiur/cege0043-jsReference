@@ -48,8 +48,8 @@ function loadFormData4(formData4) {
     d3.json(url).then(data => {
       datanew = data[0].array_to_json;
       console.log(datanew);
-      x.domain(datanew.map(d => d.rank));
-      y.domain([0, d3.max(datanew, d => d.port_id)]);
+      x.domain(datanew.map(d => d.port_id));
+      y.domain([0, d3.max(datanew, d => d.rank)]);
 
       g.append("g")
           .attr("class", "axis axis-x")
@@ -65,10 +65,10 @@ function loadFormData4(formData4) {
         .data(datanew)
         .enter().append("rect")
           .attr("class", "bar")
-          .attr("x", d => x(d.rank))
-          .attr("y", d => y(d.port_id))
+          .attr("x", d => x(d.port_id))
+          .attr("y", d => y(d.rank))
           .attr("width", x.bandwidth())
-          .attr("height", d => height - y(d.port_id));
+          .attr("height", d => height - y(d.rank));
     })
     .catch(err => {
       svg.append("text")         
