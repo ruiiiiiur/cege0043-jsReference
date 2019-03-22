@@ -1,22 +1,22 @@
 // define a global variable to hold the layer so that we can use it later on
-var formlayer6;
-var xhrFormData6;
-var quizPoints6;
+var formlayer7;
+var xhrFormData7;
+var quizPoints7;
 
-function startFormDataLoad6() {
-    xhrFormData6 = new XMLHttpRequest();
+function startFormDataLoad7() {
+    xhrFormData7 = new XMLHttpRequest();
     var url = "http://developer.cege.ucl.ac.uk:" + httpPortNumber;
-    url = url + "/lastFiveQs/"+ httpPortNumber;
-    xhrFormData6.open("GET", url, true);
-    xhrFormData6.onreadystatechange = formDataResponse6;
-    xhrFormData6.send();
+    url = url + "/getAllQuestions";
+    xhrFormData7.open("GET", url, true);
+    xhrFormData7.onreadystatechange = formDataResponse7;
+    xhrFormData7.send();
 }
 
-function formDataResponse6() {
-    if (xhrFormData6.readyState == 4) {
+function formDataResponse7() {
+    if (xhrFormData7.readyState == 4) {
         // once the data is ready, process the data
-        var formData = xhrFormData6.responseText;
-        loadFormData6(formData);
+        var formData = xhrFormData7.responseText;
+        loadFormData7(formData);
     }
 }
 
@@ -25,12 +25,12 @@ function formDataResponse6() {
 // we can also use this to determine distance for the proximity alert
 
 
-function loadFormData6(formData) {
+function loadFormData7(formData) {
     // convert the text received from the server to JSON
     var formJSON = JSON.parse(formData);
-    quizPoints6 = formJSON;
+    quizPoints7 = formJSON;
     // load the geoJSON layer
-    formLayer6 = L.geoJson(formJSON,
+    formLayer7 = L.geoJson(formJSON,
         {
             // use point to layer to create the points
             pointToLayer: function (feature, latlng) {
@@ -42,15 +42,14 @@ function loadFormData6(formData) {
                 htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_2' / > " + feature.properties.answer_2 + "<br>";
                 htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_3' / > " + feature.properties.answer_3 + "<br>";
                 htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_4' / > " + feature.properties.answer_4 + "<br>";
-                if (feature.properties.answer_correct == true)
-                {return L.marker(latlng,{icon:testMarkerGreen}).bindPopup(htmlString);}
+                return L.marker(latlng).bindPopup(htmlString);
             },
         }).addTo(mymap);
-    mymap.fitBounds(formLayer6.getBounds());
+    mymap.fitBounds(formLayer7.getBounds());
 }
 
-function removeFormLayer6() {
-    mymap.removeLayer(formLayer6);
+function removeFormLayer7() {
+    mymap.removeLayer(formLayer7);
     mymap.setView([51.505, -0.09], 13);
     }
 
