@@ -31,8 +31,12 @@ function formDataResponse5() {
 function loadFormData5(formData5) {
     // convert the text received from the server to JSON
     var formJSON5 = JSON.parse(formData5);
-    alert("The most difficult questions is " + formJSON5[0].array_to_json[0].question_text + " among all users.");
-    document.getElementById("mostDifQs").innerHTML = "formJSON5[0].array_to_json[0].question_text";
+    //alert("The most difficult questions is " + formJSON5[0].array_to_json[0].question_text + " among all users.");
+    document.getElementById("mostDifQs1").innerHTML = "Top 1:" + formJSON5[0].array_to_json[0].question_text;
+    document.getElementById("mostDifQs2").innerHTML = formJSON5[0].array_to_json[1].question_text;
+    document.getElementById("mostDifQs3").innerHTML = formJSON5[0].array_to_json[2].question_text;
+    document.getElementById("mostDifQs4").innerHTML = formJSON5[0].array_to_json[3].question_text;
+    document.getElementById("mostDifQs5").innerHTML = formJSON5[0].array_to_json[4].question_text;
 }
 
 
