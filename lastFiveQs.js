@@ -44,6 +44,8 @@ function loadFormData6(formData) {
                 htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_4' / > " + feature.properties.answer_4 + "<br>";
                 if (feature.properties.answer_correct == true)
                 {return L.marker(latlng,{icon:testMarkerGreen}).bindPopup(htmlString);}
+                if (feature.properties.answer_correct == false)
+                {return L.marker(latlng,{icon:testMarkerRed}).bindPopup(htmlString);}
             },
         }).addTo(mymap);
     mymap.fitBounds(formLayer6.getBounds());
