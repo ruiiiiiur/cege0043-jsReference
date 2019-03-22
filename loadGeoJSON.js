@@ -2,12 +2,31 @@ var client;
 var GeoJSONs;
 // define a global variable to hold the layer so that we can use it later on
 var GeoJSONlayer;
+var london_poi = 'london_poi'
+var london_highway = 'london_highway'
+
+
+function load_london_poi(){
+		alert("Loading london poi");
+	getGeoJSONs(london_poi);
+
+}
+
+
+function load_london_highway(){
+		alert("Loading london highway");
+	getGeoJSONs(london_highway);
+}
+
+function load_all_qs(){
+	getGeoJSONs();
+};
 
 
 function getGeoJSONs(){
 	client = new XMLHttpRequest();
-//    console.log(httpPortNumber);
-    client.open('GET','http://developer.cege.ucl.ac.uk:' + httpPortNumber + '/getAllQuestions');
+//	client.open('GET' , 'http://developer.cege.ucl.ac.uk:' + httpPortNumber + '/getGeoJSON/' + x + '/geom');
+    client.open('GET' , 'http://developer.cege.ucl.ac.uk:' + httpPortNumber + '/getAllQuestions');  
 	client.onreadystatechange = GeoJSONResponse; // note don't use GeoJSONResponse() with brackets as that doesn't work
 	client.send();
 	}
@@ -29,9 +48,9 @@ function loadGeoJSONlayer(GeoJSONdata) {
 	// convert the text to JSON
 	var GeoJSONjson = JSON.parse(GeoJSONdata);
 
-	GeoJSONs = GeoJSONjson[0];
+	GeoJSONs = GeoJSONjson;
 	// add the JSON layer onto the map - it will appear using the default icons
-	GeoJSONlayer = L.geoJson(GeoJSONs).addTo(mymap);
+	GeoJSONlayer = L.geoJson(GeoJSONjson).addTo(mymap);
 	// change the map zoom so that all the data is shown
 	mymap.fitBounds(GeoJSONlayer.getBounds());
 	}
