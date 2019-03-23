@@ -33,7 +33,7 @@ function loadFormData4(formData4) {
     // convert the text received from the server to JSON
     var formJSON4 = JSON.parse(formData4);
 
-    var   svg = d3.select(".fivetop").append("svg").attr("width", 500).attr("height", 220),
+    var   svg = d3.select(".fivetop").append("svg").attr("width", 340).attr("height", 180),
           margin  = {top: 20, right: 20, bottom: 30, left: 50},
           width   = +svg.attr("width")  - margin.left - margin.right,
           height  = +svg.attr("height") - margin.top  - margin.bottom,
@@ -59,7 +59,7 @@ function loadFormData4(formData4) {
 
       g.append("g")
           .attr("class", "axis axis-y")
-          .call(d3.axisLeft(y).ticks(10).tickSize(8));
+          .call(d3.axisLeft(y).ticks(5).tickSize(8));
 
       g.selectAll(".bar")
         .data(datanew)
