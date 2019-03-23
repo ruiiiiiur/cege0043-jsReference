@@ -135,7 +135,7 @@ function loadFormData9(formData9) {
     // convert the text received from the server to JSON
     var formJSON9 = JSON.parse(formData9);
 
-   document.getElementById("one_user").innerHTML = "Daily Participation Rate for One User";
+   document.getElementById("one_user").innerHTML = "Your Daily Participation Rate";
     
     var   svg = d3.select(".dailyP_one_user").append("svg").attr("width", 1000).attr("height", 550),
           margin  = {top: 20, right: 20, bottom: 30, left: 50},
