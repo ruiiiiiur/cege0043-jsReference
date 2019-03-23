@@ -36,15 +36,15 @@ function loadFormData(formData) {
             pointToLayer: function (feature, latlng) {
                 // in this case, we build an HTML DIV string
                 // using the values in the data
-                var htmlString = "<div id='popup'" + feature.properties.id + "><h2>" + feature.properties.question_title + "</h2><br>";
-                htmlString = htmlString + "<h3>" + feature.properties.question_text + "</h3><br>";
+                var htmlString = "<div id='popup'" + feature.properties.id + "><h5>" + feature.properties.question_title + "</h5>";
+                htmlString = htmlString + "<h6>" + feature.properties.question_text + "</h6><br>";
                 htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_1' / > " + feature.properties.answer_1 + "<br>";
                 htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_2' / > " + feature.properties.answer_2 + "<br>";
                 htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_3' / > " + feature.properties.answer_3 + "<br>";
                 htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_4' / > " + feature.properties.answer_4 + "<br>";
                 //htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_4' / > " + feature.properties.port_id + " < br > ";
                 htmlString = htmlString + "<button onclick='checkAnswer(" + feature.properties.id + ", [" + feature.geometry.coordinates + "]);return false;'>Submit Answer</button>";
-                //alert(feature.geometry.coordinates);
+                
                 // now include a hidden element with the answer
                 // in this case the answer is always the first choice
                 // for the assignment this will of course vary - you can use feature.properties.correct_answer

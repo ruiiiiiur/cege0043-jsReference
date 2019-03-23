@@ -4,7 +4,7 @@ loadW3HTML();
 getPort();
 trackLocation();  
 addBuffer();
-
+getQuizPoints();
 }
 
 function quizstartup() {
