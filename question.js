@@ -67,7 +67,7 @@ L.geoJSON(geojsonFeature, {
 pointToLayer: function (feature, latlng) {
 return L.marker(latlng,{icon:testMarkerBlack});
 }
-}).addTo(mymap).bindPopup("<b>" + "You are at " +  geojsonFeature.properties.popupContent + "<b>" + "You are sugguested to create questions within this area.").openPopup();}
+}).addTo(mymap).bindPopup("<b>" + "This is " +  geojsonFeature.properties.popupContent + "<b>" + ". You are sugguested to create your questions within the red circle.").openPopup();}
 
 //Function 3. Add the buffer of the point
 
