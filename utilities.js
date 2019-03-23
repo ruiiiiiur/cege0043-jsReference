@@ -30,7 +30,6 @@ var parser = new DOMParser();
 var doc = parser.parseFromString(xhr.responseText, "application/xml");
 httpPortNumber = doc.getElementsByTagName("node-port-http").item(0).textContent;
 httpsPortNumber = doc.getElementsByTagName("node-port-https").item(0).textContent;
-alert("Port : " + httpPortNumber);
 startFormDataLoad6();
 });
 // depending on whether we are in a browser or on a phone

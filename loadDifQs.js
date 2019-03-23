@@ -32,6 +32,8 @@ function loadFormData5(formData5) {
     // convert the text received from the server to JSON
     var formJSON5 = JSON.parse(formData5);
     //alert("The most difficult questions is " + formJSON5[0].array_to_json[0].question_text + " among all users.");
+    
+    document.getElementById("mostDifQs").innerHTML = "Five most difficult questions: ";
     document.getElementById("mostDifQs1").innerHTML = "Top 1:" + formJSON5[0].array_to_json[0].question_text;
     document.getElementById("mostDifQs2").innerHTML = "Top 2:" + formJSON5[0].array_to_json[1].question_text;
     document.getElementById("mostDifQs3").innerHTML = "Top 3:" + formJSON5[0].array_to_json[2].question_text;
