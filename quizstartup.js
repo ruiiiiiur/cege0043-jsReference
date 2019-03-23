@@ -3,7 +3,6 @@ function quizStartup(){
 loadW3HTML();
 getPort();
 trackLocation();  
-addPoint();
 addBuffer();
 
 }
