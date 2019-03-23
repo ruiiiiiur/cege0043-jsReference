@@ -1,5 +1,9 @@
-// define a global variable to hold the layer so that we can use it later on
+//---------------------
+//This function is called to load the 5 most difficult questions.
+//---------------------
 
+
+// define a global variable to hold the layer so that we can use it later on
 var xhrFormData5;
 var quizPoints5;
 

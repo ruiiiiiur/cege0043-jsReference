@@ -1,3 +1,7 @@
+//---------------------
+//Functions are called to upload the questions created by the user and send them to the database.
+//---------------------
+
 function startDataUpload() {
 //alert ("start data upload");
 var question_title = document.getElementById("question_title").value;
@@ -12,49 +16,27 @@ var postString = "question_title="+question_title +"&question_text="+question_te
 var latitude = document.getElementById("latitude").value;
 var longitude = document.getElementById("longitude").value;
 
+
+// now check whether the field is filled and popup alert if the field is empty 
 if (latitude == "" ) {
 alert( "Please enter your latitude." ); return false;}   
-
 if (longitude == "" ) {
 alert( "Please enter your longitude." ); return false;}   
-
 if (question_title == "" ) {
 alert( "Please enter your question title." ); return false;}   
-
 if (question_text == "" ) {
 alert( "Please enter your question text." ); return false;}   
-
 if (answer_1 == "" ) {
 alert( "Please enter answer 1." ); return false;}   
-
 if (answer_2 == "" ) {
 alert( "Please enter answer 2." ); return false;}   
-
 if (answer_3 == "" ) {
 alert( "Please enter answer 3." ); return false;}   
-
 if (answer_4 == "" ) {
 alert( "Please enter answer 4." ); return false;}   
 
 
 postString = postString + "&latitude=" + latitude + "&longitude=" + longitude;
-
-
-// now get the checkbox values - separate them with a | so that they can be
-// split later on if necessary
-//var checkString = "";
-//for (var i = 1;i< 5;i++){
-//if (document.getElementById("check"+i).checked === true) {
-//checkString = checkString + document.getElementById("check"+i).value + "||"
-//}
-//}
-//postString = postString + "&modulelist="+checkString;
-// now get the radio button values
-//if (document.getElementById("morning").checked) {
-//postString=postString+"&lecturetime=morning";}
-//if (document.getElementById("afternoon").checked) {
-//postString=postString+"&lecturetime=afternoon";}
-
 
 
 // now get the select box values
@@ -68,7 +50,7 @@ processData(postString);
 var client; // the global variable that holds the request
 
 
-// week6 part2 
+// adapted from week6 part2 
 function processData(postString) {
 client = new XMLHttpRequest();
 postString = postString + "&port_id=" + httpPortNumber;

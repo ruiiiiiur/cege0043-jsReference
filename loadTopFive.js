@@ -1,3 +1,7 @@
+//---------------------
+// Functions below are called to load top 5 scorers in the quiz.
+//---------------------
+
 // define a global variable to hold the layer so that we can use it later on
 
 var xhrFormData4;
@@ -26,13 +30,16 @@ function formDataResponse4() {
 
 
 // 'JSON' data included as above
-//[{"array_to_json":[{"rank":18}]}]
 //[{"array_to_json":[{"rank":1,"port_id":"30273"},{"rank":2,"port_id":"30282"},{"rank":3,"port_id":"30297"},{"rank":4,"port_id":"30296"},{"rank":5,"port_id":"30266"}]}]
 
 function loadFormData4(formData4) {
     // convert the text received from the server to JSON
+    
     var formJSON4 = JSON.parse(formData4);
 
+    // Codes below are adapted from https://www.tutorialsteacher.com/d3js/scales-in-d3.
+
+    // define local variables for D3 graphs 
     var   svg = d3.select(".fivetop").append("svg").attr("width", 340).attr("height", 180),
           margin  = {top: 20, right: 20, bottom: 30, left: 50},
           width   = +svg.attr("width")  - margin.left - margin.right,

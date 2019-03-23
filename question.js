@@ -1,4 +1,7 @@
-// Function 1. Pop up the lat/log when user click the map
+
+//---------------------
+//This function is called to pop up the lat/log when user click the map and load the lat/log automatically in the question form
+//---------------------
 
 // create a custom popup
 var popup = L.popup();
@@ -9,7 +12,7 @@ function onMapClick(e) {
 	.setLatLng(e.latlng)
 	.setContent("You just clicked the map at " + e.latlng.toString())
 	.openOn(mymap);
-	//var lat_lng = e.latlng.toString();
+	//lat/lng entered automatically when the user clicks on a map in the question app.
 	document.getElementsByName("lat")[0].value = e.latlng.lat;
 	document.getElementsByName("lon")[0].value = e.latlng.lng;	
 	}
@@ -19,8 +22,10 @@ mymap.on('click', onMapClick);
 
 
 
-// Function 2. Add the location of the UCL main gate
 
+//---------------------
+//This function is called to add the location of the UCL main gate
+//---------------------
 
 // create a geoJSON feature -
 var geojsonFeature = {
@@ -36,10 +41,8 @@ var geojsonFeature = {
 	};
 
 
-//var testMarkerBlue = L.AwesomeMarkers.icon({
-//icon: 'play',
-//markerColor: 'blue'
-//});
+// Global variables: add awesome markers in different colors
+
 var testMarkerGreen = L.AwesomeMarkers.icon({
 icon: 'play',
 markerColor: 'green'
@@ -66,6 +69,11 @@ markerColor: 'cadetblue'
 });
 
 
+
+//---------------------
+//This function is called to show the location of the main gate of UCL.
+//---------------------
+
 function addPoint(){
 //  add it to the map
 L.geoJSON(geojsonFeature, {
@@ -74,8 +82,13 @@ return L.marker(latlng,{icon:testMarkerBlue});
 }
 }).addTo(mymap).bindPopup("<b>" + "This is " +  geojsonFeature.properties.popupContent + "<b>" + ". You are sugguested to create your questions within the blue circle.").openPopup();}
 
-//Function 3. Add the buffer of the point
 
+
+
+
+//---------------------
+//This function is called to add the buffer of the point (main gate of UCL).
+//---------------------
 
 // add a circle around UCL main gate
 function addBuffer(){

@@ -1,3 +1,7 @@
+//---------------------
+//Functions are called to upload the answers answered by the user and send them to the database.
+//---------------------
+
 function startAnswerUpload(id, ca, as) {
 alert ("start data upload");
 //var question_id = feature.properties.id;
@@ -20,7 +24,7 @@ processAnswer(postString);
 var client2; // the global variable that holds the request
 
 
-// week6 part2 
+// adapted from week6 part2 
 function processAnswer(postString) {
 client2 = new XMLHttpRequest();
 postString = postString + "&port_id=" + httpPortNumber;

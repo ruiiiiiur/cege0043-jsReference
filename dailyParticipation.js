@@ -1,3 +1,7 @@
+//---------------------
+//This function is called to get the values of daily participation rates for all users.
+//---------------------
+
 // define a global variable to hold the layer so that we can use it later on
 
 var xhrFormData8;
@@ -98,7 +102,9 @@ function loadFormData8(formData8) {
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
+//---------------------
+//This function is called to get the values of daily participation rate for the current user.
+//---------------------
 
 // define a global variable to hold the layer so that we can use it later on
 

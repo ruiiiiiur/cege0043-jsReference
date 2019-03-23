@@ -1,3 +1,5 @@
+
+// load the map the set the view to UCL main gate
 var mymap = L.map('mapid').setView([51.524257,-0.134503], 16);
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 maxZoom: 18,
@@ -6,3 +8,13 @@ attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</
 'Imagery © <a href="http://mapbox.com">Mapbox</a>',
 id: 'mapbox.streets'
 }).addTo(mymap);
+
+
+
+//---------------------
+//This function is called to relocate the map to the UCL main gate.
+//---------------------
+function goBacktoUCL(){
+mymap.map('mapid').setView([51.524257,-0.134503], 16);
+}
+

@@ -1,3 +1,7 @@
+//---------------------
+//This function is called to load the last 5 questions that the user answered. 
+//---------------------
+
 // define a global variable to hold the layer so that we can use it later on
 var formlayer6;
 var xhrFormData6;
@@ -42,8 +46,10 @@ function loadFormData6(formData) {
                 htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_2' / > " + feature.properties.answer_2 + "<br>";
                 htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_3' / > " + feature.properties.answer_3 + "<br>";
                 htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_4' / > " + feature.properties.answer_4 + "<br>";
+                //change the icon color to green if the question was answered correctly
                 if (feature.properties.answer_correct == true)
                 {return L.marker(latlng,{icon:testMarkerGreen}).bindPopup(htmlString);}
+                //change the icon color to red if the question was answered wrongly
                 if (feature.properties.answer_correct == false)
                 {return L.marker(latlng,{icon:testMarkerRed}).bindPopup(htmlString);}
             },

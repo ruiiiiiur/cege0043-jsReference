@@ -1,3 +1,7 @@
+//---------------------
+//This function is called to load the number of answers the user answered correctly.
+//---------------------
+
 // define a global variable to hold the layer so that we can use it later on
 
 var xhrFormData2;

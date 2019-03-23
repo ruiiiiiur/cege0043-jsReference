@@ -1,3 +1,8 @@
+//---------------------
+//This function is called to get all questions uploaded by all users.
+//---------------------
+
+
 // define a global variable to hold the layer so that we can use it later on
 var formlayer7;
 var xhrFormData7;
