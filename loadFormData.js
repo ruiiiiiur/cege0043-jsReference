@@ -64,7 +64,7 @@ function loadFormData(formData) {
 
 function removeFormLayer() {
     mymap.removeLayer(formLayer);
-    mymap.setView([51.505, -0.09], 13);
+    mymap.setView([51.524257, -0.134503], 13);
     }
 
 // Add a method to process the button click in this pop-up.

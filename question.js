@@ -65,7 +65,7 @@ function addPoint(){
 //  add it to the map
 L.geoJSON(geojsonFeature, {
 pointToLayer: function (feature, latlng) {
-return L.marker(latlng,{icon:testMarkerGreen});
+return L.marker(latlng,{icon:testMarkerBlack});
 }
 }).addTo(mymap).bindPopup("<b>" + "You are at " +  geojsonFeature.properties.popupContent + "<b>" + "You are sugguested to create questions within this area.").openPopup();}
 
@@ -76,7 +76,7 @@ return L.marker(latlng,{icon:testMarkerGreen});
 function addBuffer(){
 L.circle([51.524257, -0.134503], 200, {
 	color: 'red',
-	fillColor: '#f03',
-	fillOpacity: 0.5
+	fillColor: '#CA3640',
+	fillOpacity: 0.3
 	}).addTo(mymap);}
 

@@ -58,5 +58,5 @@ function loadGeoJSONlayer(GeoJSONdata) {
 
 function removeGeoJSONLayer() {
     mymap.removeLayer(GeoJSONlayer);
-    mymap.setView([51.524257,-0.134503], 13);
+    mymap.setView([51.524257, -0.134503], 13);
     }
