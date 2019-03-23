@@ -12,6 +12,11 @@ var postString = "question_title="+question_title +"&question_text="+question_te
 var latitude = document.getElementById("latitude").value;
 var longitude = document.getElementById("longitude").value;
 
+if (latitude == "" ) {
+alert( "Please enter your latitude." ); return false;}   
+
+if (longitude == "" ) {
+alert( "Please enter your longitude." ); return false;}   
 
 if (question_title == "" ) {
 alert( "Please enter your question title." ); return false;}   

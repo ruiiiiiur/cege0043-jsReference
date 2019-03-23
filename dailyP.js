@@ -33,7 +33,7 @@ function loadFormData8(formData8) {
     // convert the text received from the server to JSON
     var formJSON8 = JSON.parse(formData8);
 
-   document.getElementById("all_users").innerHTML = "Daily Participation Rate for All Users (blue: questions have been answered; yellow: answers were correct): ";
+   document.getElementById("all_users").innerHTML = "<b>Daily Participation Rates for All Users </b>" + "(Blue: questions have been answered; Yellow: answers were correct):";
     
     var   svg = d3.select(".dailyP_all_users").append("svg").attr("width", 1000).attr("height", 550),
           margin  = {top: 20, right: 20, bottom: 30, left: 50},
@@ -135,7 +135,7 @@ function loadFormData9(formData9) {
     // convert the text received from the server to JSON
     var formJSON9 = JSON.parse(formData9);
 
-   document.getElementById("one_user").innerHTML = "Your Daily Participation Rate (blue: questions have been answered; yellow: answers were correct):";
+   document.getElementById("one_user").innerHTML = "<b>Your Daily Participation Rate </b>" + "(Blue: questions have been answered; Yellow: answers were correct):";
     
     var   svg = d3.select(".dailyP_one_user").append("svg").attr("width", 1000).attr("height", 550),
           margin  = {top: 20, right: 20, bottom: 30, left: 50},
