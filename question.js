@@ -56,8 +56,13 @@ markerColor: 'pink'
 });
 
 var testMarkerBlack = L.AwesomeMarkers.icon({
-icon: 'play',
+icon: 'school',
 markerColor: 'black'
+});
+
+var testMarkerBlue = L.AwesomeMarkers.icon({
+icon: 'school',
+markerColor: 'cadetblue'
 });
 
 
@@ -65,9 +70,9 @@ function addPoint(){
 //  add it to the map
 L.geoJSON(geojsonFeature, {
 pointToLayer: function (feature, latlng) {
-return L.marker(latlng,{icon:testMarkerBlack});
+return L.marker(latlng,{icon:testMarkerBlue});
 }
-}).addTo(mymap).bindPopup("<b>" + "This is " +  geojsonFeature.properties.popupContent + "<b>" + ". You are sugguested to create your questions within the red circle.").openPopup();}
+}).addTo(mymap).bindPopup("<b>" + "This is " +  geojsonFeature.properties.popupContent + "<b>" + ". You are sugguested to create your questions within the blue circle.").openPopup();}
 
 //Function 3. Add the buffer of the point
 
@@ -75,8 +80,8 @@ return L.marker(latlng,{icon:testMarkerBlack});
 // add a circle around UCL main gate
 function addBuffer(){
 L.circle([51.524257, -0.134503], 200, {
-	color: 'red',
-	fillColor: '#CA3640',
+	color: 'cadetblue',
+	fillColor: '#7697cc',
 	fillOpacity: 0.3
 	}).addTo(mymap);}
 
