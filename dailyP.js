@@ -33,7 +33,9 @@ function loadFormData8(formData8) {
     // convert the text received from the server to JSON
     var formJSON8 = JSON.parse(formData8);
 
-    var   svg = d3.select(".dailyP").append("svg").attr("width", 1000).attr("height", 550),
+   document.getElementById("all_users").innerHTML = "Daily Participation Rate for All Users";
+    
+    var   svg = d3.select(".dailyP_all_users").append("svg").attr("width", 1000).attr("height", 550),
           margin  = {top: 20, right: 20, bottom: 30, left: 50},
           width   = +svg.attr("width")  - margin.left - margin.right,
           height  = +svg.attr("height") - margin.top  - margin.bottom,
@@ -61,6 +63,7 @@ function loadFormData8(formData8) {
           .attr("class", "axis axis-y")
           .call(d3.axisLeft(y).ticks(10).tickSize(8));
 
+      //code adapted from https://github.com/liufly/Dual-scale-D3-Bar-Chart
       g.selectAll(".bar1")
         .data(datanew)
         .enter().append("rect")
@@ -70,9 +73,8 @@ function loadFormData8(formData8) {
           .attr("width", x.bandwidth()/2)
           .attr("height", d => height - y(d.questions_answered));
 
-
-
-          g.selectAll(".bar2")
+      //code adapted from https://github.com/liufly/Dual-scale-D3-Bar-Chart
+      g.selectAll(".bar2")
         .data(datanew)
         .enter().append("rect")
           .attr("class", "bar2")
