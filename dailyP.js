@@ -96,3 +96,105 @@ function loadFormData8(formData8) {
 }
 
 
+//----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+// define a global variable to hold the layer so that we can use it later on
+
+var xhrFormData9;
+var quizPoints9;
+
+function startFormDataLoad9() {
+    xhrFormData9 = new XMLHttpRequest();
+    var url = "http://developer.cege.ucl.ac.uk:" + httpPortNumber;
+    url = url + "/dailyParticipation_oneUser/" + httpPortNumber;
+    xhrFormData9.open("GET", url, true);
+    xhrFormData9.onreadystatechange = formDataResponse9;
+    xhrFormData9.send();
+}
+
+function formDataResponse9() {
+    if (xhrFormData9.readyState == 4) {
+        // once the data is ready, process the data
+        var formData9 = xhrFormData9.responseText;
+        loadFormData9(formData9);
+    }
+}
+
+// keep the layer global so that we can automatically pop up a
+// pop-up menu on a point if necessary
+// we can also use this to determine distance for the proximity alert
+
+
+// 'JSON' data included as above
+//[{"array_to_json":[{"questions_answered":19}]}]
+//[{"array_to_json":[{"questions_answered":1,"day":"30273"},{"questions_answered":2,"day":"30292"},{"questions_answered":3,"day":"30297"},{"questions_answered":9,"day":"30296"},{"questions_answered":5,"day":"30266"}]}]
+
+function loadFormData9(formData9) {
+    // convert the text received from the server to JSON
+    var formJSON9 = JSON.parse(formData9);
+
+   document.getElementById("one_user").innerHTML = "Daily Participation Rate for One User";
+    
+    var   svg = d3.select(".dailyP_one_user").append("svg").attr("width", 1000).attr("height", 550),
+          margin  = {top: 20, right: 20, bottom: 30, left: 50},
+          width   = +svg.attr("width")  - margin.left - margin.right,
+          height  = +svg.attr("height") - margin.top  - margin.bottom,
+          x       = d3.scaleBand().rangeRound([0, width]).padding(0.2),
+          y       = d3.scaleLinear().rangeRound([height, 0]),
+          g       = svg.append("g")
+                       .attr("transform", `translate(${margin.left},${margin.top})`);
+
+    var url = "http://developer.cege.ucl.ac.uk:" + httpPortNumber;
+    url = url + "/dailyParticipation_oneUser/" + httpPortNumber;
+
+    d3.json(url).then(data => {
+      datanew = data[0].array_to_json;
+      console.log(datanew);
+      x.domain(datanew.map(d => d.day));
+      y.domain([0, d3.max(datanew, d => d.questions_answered)]);
+
+      g.append("g")
+          .attr("class", "axis axis-x")
+          .attr("transform", `translate(0,${height})`)
+          .call(d3.axisBottom(x));
+
+
+      g.append("g")
+          .attr("class", "axis axis-y")
+          .call(d3.axisLeft(y).ticks(10).tickSize(9));
+
+      //code adapted from https://github.com/liufly/Dual-scale-D3-Bar-Chart
+      g.selectAll(".bar1")
+        .data(datanew)
+        .enter().append("rect")
+          .attr("class", "bar1")
+          .attr("x", d => x(d.day))
+          .attr("y", d => y(d.questions_answered))
+          .attr("width", x.bandwidth()/2)
+          .attr("height", d => height - y(d.questions_answered));
+
+      //code adapted from https://github.com/liufly/Dual-scale-D3-Bar-Chart
+      g.selectAll(".bar2")
+        .data(datanew)
+        .enter().append("rect")
+          .attr("class", "bar2")
+          .attr("x", d => x(d.day)+ x.bandwidth()/2)
+          .attr("y", d => y(d.questions_correct))
+          .attr("width", x.bandwidth()/2)
+          .attr("height", d => height - y(d.questions_correct));
+    })
+
+    .catch(err => {
+      svg.append("text")         
+            .attr("y", 20)
+            .attr("text-anchor", "left")  
+            .style("font-size", "20px") 
+            .style("font-weight", "bold")  
+            .text(`Couldn't open the data file: "${err}".`);
+    });
+
+}
+
+
