@@ -48,12 +48,12 @@ function loadFormData6(formData) {
                 {return L.marker(latlng,{icon:testMarkerRed}).bindPopup(htmlString);}
             },
         }).addTo(mymap);
-    mymap.fitBounds(formLayer6.getBounds());
+    //mymap.fitBounds(formLayer6.getBounds());
 }
 
 function removeFormLayer6() {
     mymap.removeLayer(formLayer6);
-    mymap.setView([51.505, -0.09], 13);
+    mymap.setView([51.505, -0.09], 16);
     }
 
 
