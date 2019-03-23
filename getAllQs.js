@@ -50,7 +50,7 @@ function loadFormData7(formData) {
 
 function removeFormLayer7() {
     mymap.removeLayer(formLayer7);
-    mymap.setView([51.505, -0.09], 13);
+    mymap.setView([51.524257,-0.134503], 13);
     }
 
 

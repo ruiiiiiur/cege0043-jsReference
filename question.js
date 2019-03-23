@@ -50,6 +50,16 @@ icon: 'play',
 markerColor: 'red'
 });
 
+var testMarkerPink = L.AwesomeMarkers.icon({
+icon: 'play',
+markerColor: 'pink'
+});
+
+var testMarkerBlack = L.AwesomeMarkers.icon({
+icon: 'play',
+markerColor: 'black'
+});
+
 
 function addPoint(){
 //  add it to the map
