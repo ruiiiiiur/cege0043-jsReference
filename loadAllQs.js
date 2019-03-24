@@ -34,6 +34,8 @@ function loadFormData7(formData) {
     // convert the text received from the server to JSON
     var formJSON = JSON.parse(formData);
     quizPoints7 = formJSON;
+    // remove the layer if existed
+
     // load the geoJSON layer
     formLayer7 = L.geoJson(formJSON,
         {
@@ -47,15 +49,14 @@ function loadFormData7(formData) {
                 htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_2' / > " + feature.properties.answer_2 + "<br>";
                 htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_3' / > " + feature.properties.answer_3 + "<br>";
                 htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_4' / > " + feature.properties.answer_4 + "<br>";
-                return L.marker(latlng).bindPopup(htmlString);
+                return L.marker(latlng,{icon:testMarkerBlue}).bindPopup(htmlString);
             },
-        }).addTo(mymap);
-    mymap.fitBounds(formLayer7.getBounds());
-}
+        }).addTo(mymap,{icon:testMarkerBlue});
+    mymap.fitBounds(formLayer7.getBounds());}
+
 
 function removeFormLayer7() {
     mymap.removeLayer(formLayer7);
-    //mymap.setView([51.524257,-0.134503], 13);
     }
 
 

@@ -56,7 +56,7 @@ function loadFormData(formData) {
                 
 
 
-                return L.marker(latlng).bindPopup(htmlString);
+                return L.marker(latlng, {icon:testMarkerDarkBlue}).bindPopup(htmlString);
             },
         }).addTo(mymap);
     mymap.fitBounds(formLayer.getBounds());

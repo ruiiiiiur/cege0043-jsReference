@@ -16,5 +16,6 @@ id: 'mapbox.streets'
 //---------------------
 function goBacktoUCL(){
 mymap.map('mapid').setView([51.524257,-0.134503], 16);
+addPoint();
 }
 

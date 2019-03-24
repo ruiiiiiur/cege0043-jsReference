@@ -53,19 +53,26 @@ icon: 'play',
 markerColor: 'red'
 });
 
-var testMarkerPink = L.AwesomeMarkers.icon({
-icon: 'play',
-markerColor: 'pink'
+var testMarkerOrange = L.AwesomeMarkers.icon({
+icon: 'home',
+markerColor: 'orange'
 });
 
-var testMarkerBlack = L.AwesomeMarkers.icon({
-icon: 'school',
-markerColor: 'black'
+var testMarkerDarkBlue = L.AwesomeMarkers.icon({
+icon: 'home',
+markerColor: 'darkblue'
 });
+
 
 var testMarkerBlue = L.AwesomeMarkers.icon({
 icon: 'school',
-markerColor: 'cadetblue'
+markerColor: 'blue'
+});
+
+
+var testMarkerUCL = L.AwesomeMarkers.icon({
+icon: 'school',
+markerColor: 'darkpurple'
 });
 
 
@@ -78,7 +85,7 @@ function addPoint(){
 //  add it to the map
 L.geoJSON(geojsonFeature, {
 pointToLayer: function (feature, latlng) {
-return L.marker(latlng,{icon:testMarkerBlue});
+return L.marker(latlng,{icon:testMarkerUCL});
 }
 }).addTo(mymap).bindPopup("<b>" + "This is " +  geojsonFeature.properties.popupContent + "<b>" + ". You are sugguested to create your questions within the blue circle.").openPopup();}
 
