@@ -39,7 +39,7 @@ function loadFormData8(formData8) {
 
    document.getElementById("all_users").innerHTML = "<b>Daily Participation Rates for All Users </b>" + "(Blue: questions have been answered; Yellow: answers were correct):";
     
-    var   svg = d3.select(".dailyP_all_users").append("svg").attr("width", 1000).attr("height", 550),
+    var   svg = d3.select(".dailyP_all_users").append("svg").attr("width", 800).attr("height", 450),
           margin  = {top: 20, right: 20, bottom: 30, left: 50},
           width   = +svg.attr("width")  - margin.left - margin.right,
           height  = +svg.attr("height") - margin.top  - margin.bottom,
@@ -143,7 +143,7 @@ function loadFormData9(formData9) {
 
    document.getElementById("one_user").innerHTML = "<b>Your Daily Participation Rate </b>" + "(Blue: questions have been answered; Yellow: answers were correct):";
     
-    var   svg = d3.select(".dailyP_one_user").append("svg").attr("width", 1000).attr("height", 550),
+    var   svg = d3.select(".dailyP_one_user").append("svg").attr("width", 800).attr("height", 450),
           margin  = {top: 20, right: 20, bottom: 30, left: 50},
           width   = +svg.attr("width")  - margin.left - margin.right,
           height  = +svg.attr("height") - margin.top  - margin.bottom,

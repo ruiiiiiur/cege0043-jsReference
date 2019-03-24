@@ -41,8 +41,8 @@ function loadFormData7(formData) {
             pointToLayer: function (feature, latlng) {
                 // in this case, we build an HTML DIV string
                 // using the values in the data
-                var htmlString = "<div id='popup'" + feature.properties.id + "><h2>" + feature.properties.question_title + "</h2><br>";
-                htmlString = htmlString + "<h3>" + feature.properties.question_text + "</h3><br>";
+                var htmlString = "<div id='popup'" + feature.properties.id + "><h5>" + feature.properties.question_title + "</h5><br>";
+                htmlString = htmlString + "<h6>" + feature.properties.question_text + "</h6><br>";
                 htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_1' / > " + feature.properties.answer_1 + "<br>";
                 htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_2' / > " + feature.properties.answer_2 + "<br>";
                 htmlString = htmlString + "<input type='radio' name='answer' id = '" + feature.properties.id + "_3' / > " + feature.properties.answer_3 + "<br>";
@@ -55,7 +55,7 @@ function loadFormData7(formData) {
 
 function removeFormLayer7() {
     mymap.removeLayer(formLayer7);
-    mymap.setView([51.524257,-0.134503], 13);
+    //mymap.setView([51.524257,-0.134503], 13);
     }
 
 
