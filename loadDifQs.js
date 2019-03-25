@@ -8,6 +8,7 @@ var xhrFormData5;
 var quizPoints5;
 
 function startFormDataLoad5() {
+    w3.hide('#create_question');
     xhrFormData5 = new XMLHttpRequest();
     var url = "http://developer.cege.ucl.ac.uk:" + httpPortNumber;
     url = url + "/FiveMostDifficultQuestions";
